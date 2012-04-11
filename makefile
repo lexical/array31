@@ -6,4 +6,7 @@ all : array31 #cw
 array31 : adll.cpp arrayts30.cpp arrayts40.cpp arrayts123.cpp aarrayts.cpp acandidatewindows.cpp aclassfactory.cpp aeditsession.cpp aarraylex.cpp akeyboardbaritem.cpp
 	rc array.rc
     cl -Ox -LD -MT -EHsc $** -link -def:adll.def -dll user32.lib gdi32.lib Advapi32.lib ole32.lib oleaut32.lib -manifest -manifestfile:adll.manifest array.res -machine:x86
-#	cl -Zi -LD -MT -EHsc $** -link -def:adll.def -dll user32.lib gdi32.lib Advapi32.lib ole32.lib -manifest -manifestfile:adll.manifest
+	ren adll.dll aarray.dll
+
+clean:
+  del *.obj *.exp *.RES *.dll *.LIB *.manifest
